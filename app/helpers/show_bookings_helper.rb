@@ -1,0 +1,2 @@
+module ShowBookingsHelper
+end
