@@ -1,0 +1,10 @@
+<h1>Cities#new</h1>
+<p>Find me in app/views/cities/new.html.erb</p>
+<%= form_with model:@city do |f|%>
+<b class="label">Add City</b><%= f.text_field :name %>
+  <% @city.errors.full_messages_for(:name).each do |message| %>
+  <div><%= message %></div>
+  <% end %><br><br>
+
+<%= f.submit  %>
+<% end %>
