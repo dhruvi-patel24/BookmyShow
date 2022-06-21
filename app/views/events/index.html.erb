@@ -1,0 +1,14 @@
+<h1>Events</h1>
+<table>
+  <thead>
+    <th>Name</th>
+  </thead>
+  <tbody>
+    <% @events.each do |f|%>
+      <tr>
+        <td><%= f.name%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Event", new_event_path %>

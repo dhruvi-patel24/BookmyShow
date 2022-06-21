@@ -1,0 +1,17 @@
+<%= form_with model:@event do |f|%>
+<b class="label">Add Event</b><%= f.text_field :name %>
+  <% @event.errors.full_messages_for(:name).each do |message| %>
+  <div><%= message %></div>
+  <% end %><br><br>
+
+<b class="label">StartTime</b><%= f.datetime_field :start_time %>
+  <% @event.errors.full_messages_for(:start_time).each do |message| %>
+  <div><%= message %></div>
+  <% end %><br><br>
+
+<b class="label">EndTime</b><%= f.datetime_field :end_time %>
+  <% @event.errors.full_messages_for(:end_time).each do |message| %>
+  <div><%= message %></div>
+  <% end %><br><br>
+<%= f.submit  %>
+<% end %>
