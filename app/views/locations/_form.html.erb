@@ -1,0 +1,22 @@
+<%= form_with model:@location do |f|%>
+<b class="label">Add name</b><%= f.text_field :name %>
+  <% @location.errors.full_messages_for(:name).each do |message| %>
+  <div><%= message %></div>
+  <% end %><br><br>
+
+<b class="label">Add address</b><%= f.text_field :address %>
+  <% @location.errors.full_messages_for(:address).each do |message| %>
+  <div><%= message %></div>
+  <% end %><br><br>
+
+<b class="label">Add capacity</b><%= f.text_field :capacity %>
+  <% @location.errors.full_messages_for(:capacity).each do |message| %>
+  <div><%= message %></div>
+  <% end %><br><br>
+
+<%= f.label :city_id %><br>
+      <%= collection_select( :location, :city_id , City.all, :id, :name)%>
+        <br>
+        <br>
+<%= f.submit  %>
+<% end %>
