@@ -1,0 +1,14 @@
+<%= form_with model: [ @user, @user.show_bookings.build ] do |f|%>
+  <%= f.label :event_id %><br>
+      <%= collection_select( :show_booking, :event_id , Event.all, :id, :name)%>
+        <br>
+        <br>
+
+<b class="label">Add capacity</b>
+<%= f.text_field :capacity %>
+  <% @booking.errors.full_messages_for(:capacity).each do |message| %>
+  <div><%= message %></div>
+  <% end %><br><br>
+
+<%= f.submit 'Submit' %>
+<% end %>
