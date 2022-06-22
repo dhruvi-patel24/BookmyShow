@@ -1,0 +1,4 @@
+<%= form_with model:@role do |f|%>
+   Role<%= f.select :name, [['Admin', 'Admin'], ['User', 'User']] %><br><br>
+  <%= f.submit 'submit' %>
+<% end %>
