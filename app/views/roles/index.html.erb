@@ -1,0 +1,16 @@
+<h1>Roles#index</h1>
+<%# <p>Find me in app/views/roles/index.html.erb</p> %>
+<h1>New roles</h1>
+<table>
+  <thead>
+    <th>Name</th>
+  </thead>
+  <tbody>
+    <% @roles.each do |f|%>
+      <tr>
+        <td><%= f.name%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to "New Role", new_role_path %>

@@ -1,0 +1,23 @@
+<h1>New User</h1>
+<table>
+  <thead>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Email</th>
+    <th>Role</th>
+  </thead>
+  <tbody>
+    <% @users.each do |u|%>
+      <tr>
+        <td><%= u.name%></td>
+        <td><%= u.phone%></td>
+        <td><%= u.email%></td>
+        <td><%= u.roles.last.name %></td>
+        <td><%= link_to "New Booking", new_user_show_booking_path(u)%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to "New User", new_user_path %>
+
